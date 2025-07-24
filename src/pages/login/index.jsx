@@ -13,16 +13,11 @@ function LoginPage() {
     setLoading(true)
     try {
       const res = await axios.post(
-        "http://apialfa.apoint.uz/v1/hr/user/sign-in?include=token",
+        "/api/proxy",
         {
           username,
           password,
         },
-        {
-          headers: {
-            "Content-Type": "application/json",
-          },
-        }
       );
       localStorage.setItem("token",res.data.token.token);
       toast.success("Login muvaffaqiyatli!")
