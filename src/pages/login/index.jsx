@@ -17,6 +17,11 @@ function LoginPage() {
         {
           username,
           password,
+        },
+        {
+          headers: {
+            "Content-Type": "application/json",
+          },
         }
       );
       localStorage.setItem("token",res.data.token.token);
